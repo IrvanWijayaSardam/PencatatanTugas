@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pencacatantugas/models/materipelajaran.dart';
+import 'package:pencacatantugas/screen/matapelajaran.dart';
 import '../models/tugas.dart';
 import './tugasharian.dart';
 
@@ -11,9 +13,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
-  late List<Tugas> _listTugas; // Declare _listTugas here
+  late List<Tugas> _listTugas; 
+  late List<MateriPelajaran> _listMataPelajaran; 
 
-  List<Widget> tabs = []; // Declare tabs as an empty list
+  List<Widget> tabs = []; 
 
   @override
   void initState() {
@@ -21,9 +24,13 @@ class _HomeState extends State<Home> {
       Tugas(id: '1', matakuliah: 'Pemrograman Mobile', deskripsi: 'Ngoding', status: 'false')
     ];
 
+    _listMataPelajaran = [
+      MateriPelajaran(id: '1', matakuliah: 'Pemrograman Mobile', deskripsi: 'Flutter adalah blablabla')
+    ];
+
     tabs = [
       TugasHarian(listTugas: _listTugas.toList()),
-      Center(child: Text('Materi Pelajaran')),
+      CatatanMateri(listPelajaran: _listMataPelajaran.toList()),
       Center(child: Text('Profile')),
     ];
 

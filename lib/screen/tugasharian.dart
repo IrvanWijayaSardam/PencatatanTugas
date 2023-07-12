@@ -15,6 +15,7 @@ class TugasHarian extends StatefulWidget {
 class _TugasHarianState extends State<TugasHarian> {
   final _matakuliah = TextEditingController();
   final _deskripsi = TextEditingController();
+  
   _deleteTugas(String id) {
     setState(() {
       widget.listTugas.removeWhere((tx) => tx.id == id);
@@ -116,6 +117,8 @@ class _TugasHarianState extends State<TugasHarian> {
                                 deskripsi: _deskripsi.text,
                                 status: isChecked ? 'true' : 'false',
                               );
+                              _matakuliah.clear();
+                              _deskripsi.clear();
                             }
                           });
                           Navigator.of(context).pop();
