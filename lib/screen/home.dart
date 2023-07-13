@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pencacatantugas/models/materipelajaran.dart';
 import 'package:pencacatantugas/screen/matapelajaran.dart';
+import 'package:pencacatantugas/screen/profile.dart';
 import '../models/tugas.dart';
 import './tugasharian.dart';
 
@@ -31,7 +32,7 @@ class _HomeState extends State<Home> {
     tabs = [
       TugasHarian(listTugas: _listTugas.toList()),
       CatatanMateri(listPelajaran: _listMataPelajaran.toList()),
-      Center(child: Text('Profile')),
+      ProfileScreen()
     ];
 
     super.initState();
